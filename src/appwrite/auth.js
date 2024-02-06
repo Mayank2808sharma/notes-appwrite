@@ -27,14 +27,14 @@ export class AuthService {
         return user;
       }
     } catch (error) {
-      throw error;
+        console.log("error in creating  user",error);
     }
   }
   async login({ email, password }) {
     try {
       return await this.account.createEmailSession(email, password);
     } catch (error) {
-      throw error;
+        console.log("error in login user",error);
     }
   }
 
@@ -42,7 +42,7 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      throw error;
+        console.log("error in getting current user",error);
     }
   }
 
@@ -50,7 +50,7 @@ export class AuthService {
     try {
       await this.account.deleteSessions();
     } catch (error) {
-      throw error;
+        console.log("error in loging out user",error);
     }
   }
 }
